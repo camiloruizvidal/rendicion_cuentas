@@ -6,10 +6,7 @@ use App\Role;
 class UsersTableSeeder extends Seeder
 {
     public function run()
-    {
-        $role_user = Role::where('name', 'usuario')->first();
-        $role_admin = Role::where('name', 'admin')->first();
-        
+    {        
         $user = new User();
         $user->nombre_primero = 'admin';
         $user->nombre_segundo = 'admin';
@@ -22,8 +19,6 @@ class UsersTableSeeder extends Seeder
         $user->rol='admin';
         $user->created_at = date('Y-m-d h:i:s');
         $user->save();
-        $user->roles()->attach($role_admin);
-        
         unset($user);
 
      }

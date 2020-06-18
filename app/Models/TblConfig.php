@@ -1,17 +1,31 @@
 <?php
 
+/**
+ * Created by Reliese Model.
+ */
+
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes; //línea necesaria
+
+/**
+ * Class TblConfig
+ * 
+ * @property int $id
+ * @property string $name
+ * @property string $value
+ * @property Carbon $created_at
+ * @property Carbon $updated_at
+ *
+ * @package App\Models
+ */
 class TblConfig extends Model
 {
-    use SoftDeletes; //Implementamos 
+	protected $table = 'tbl_config';
 
-    protected $table = 'tbl_config';
-    protected $primaryKey = 'id';
-    protected $fillable = [
-                  'name',
-                  'value'
-              ];
+	protected $fillable = [
+		'name',
+		'value'
+	];
 }
