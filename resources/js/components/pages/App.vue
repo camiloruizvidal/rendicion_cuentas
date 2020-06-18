@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div :class="!dashboard?'container-fluid':''">
 		<template v-if="dashboard">
 			
 			<router-view v-if="permisos==null"/>

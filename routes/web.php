@@ -5,6 +5,7 @@ Route::get('logout',                'SinglePageController@cerrarSession');
 Route::get('dashboard',             'SinglePageController@home');
 Route::get('encuesta/{any}',        'SinglePageController@index')->where('any', '.*');
 Route::get('encuestas/show/{name}', 'TblEncuestasController@search');
+Route::post('encuestas/save',        'TblEncuestasController@save');
 
 Route::group(['middleware' => ['auth','role:admin']],function()
 {

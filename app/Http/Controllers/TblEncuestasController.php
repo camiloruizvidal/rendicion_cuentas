@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\TblEncuesta;
+use App\Models\TblEncuestasResultado;
+use App\Models\TblEncuestasResultadosRespuesta;
+
 
 class TblEncuestasController extends Controller
 {
@@ -38,7 +42,27 @@ class TblEncuestasController extends Controller
     }
     public function search($name)
     {
-        
+        $data = TblEncuesta::
+        with('tbl_encuestas_preguntas.tbl_encuestas_respuestas')->
+        where('nombre','=',$name)->
+        firstOrFail();   
+        return $this->sendResponse($data);
+    }
+    public function save(Request $request)
+    {
+        $res = new TblEncuestasResultado();
+        $res->id_tbl_encuestas=$request->encuesta_id;
+        $res->save();
+        foreach($request->respuestas as $temp)
+        {
+            $temp = (object) $temp;
+            $resp = new TblEncuestasResultadosRespuesta();
+            $resp->id_tbl_encuestas_resultados  = $res->id;
+            $resp->id_tbl_encuestas_preguntas   = $temp->id_pregunta;
+            $resp->id_tbl_encuestas_respuestas  = $temp->respuesta;
+            $resp->save();
+        }
+        return $this->sendResponse($res);
     }
     /**
      * Display the specified resource.
