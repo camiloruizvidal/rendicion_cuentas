@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class TblConfigSeeder extends Seeder
+class TblEncuestasRespuestasTipoSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,13 +11,12 @@ class TblConfigSeeder extends Seeder
      */
     public function run()
     {
-        \DB::table('tbl_config')->delete();
+        \DB::table('tbl_encuestas_respuestas_tipos')->delete();
         
-        \DB::table('tbl_config')->insert(array (
+        \DB::table('tbl_encuestas_respuestas_tipos')->insert(array (
             0 => 
             array (
-                'name' => 'contrato',
-                'value' => '1',
+                'nombre' => 'seleccion multiple',
                 'created_at' => date('Y-m-d H:m:i'),
                 'updated_at' => date('Y-m-d H:m:i'),
             ),
