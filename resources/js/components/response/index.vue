@@ -10,16 +10,16 @@
         </template>
         <template v-else>
 
-            <form v-on:submit.prevent="save" v-if="data!=[]">
-                <h1>{{data.titulo}}</h1>
+            <form v-on:submit.prevent="save" v-if="data!=[]" class="form-encuesta">
+                <h1 class="title">{{data.titulo}}</h1>
                 <div v-for="(item,idx) in data.tbl_encuestas_preguntas" :key="idx">
-                    <h4><i>{{item.pregunta}}</i></h4>
+                    <h4 class="question">{{item.pregunta}}</h4>
                     <template  v-for="(item2,idx2) in item.tbl_encuestas_respuestas" >
                     <label :key="idx2">
                         <table>
                             <tr>
                                 <td><input type="radio" v-model="resultado.respuestas[idx].respuesta"  :value="item2.id" :name="'name'+idx" :required="idx2==0"></td>
-                                <td>{{item2.respuestas}}</td>
+                                <td><span class="answer">{{item2.respuestas}}</span></td>
                             </tr>
                         </table>
                     </label>

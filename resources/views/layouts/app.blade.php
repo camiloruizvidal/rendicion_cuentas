@@ -9,6 +9,7 @@
 
         <link rel="stylesheet" href="{{url('css/app.css')}}">
         <link rel="stylesheet" href="{{url('css/dashboard.css')}}?v=<?=date('YmdHis').rand(1,1253);?>">
+        <link rel="stylesheet" href="{{url('css/encuesta.css')}}?v=<?=date('YmdHis').rand(1,1253);?>">
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,600">
         <link rel="stylesheet" href="{{url('/css/jquery-ui/jquery-ui.css')}}">
