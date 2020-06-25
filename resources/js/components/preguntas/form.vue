@@ -3,7 +3,7 @@
         <template v-if="disabled">
                 <div class="alert alert-success" role="alert">
                     <h4 class="alert-heading">Guardado</h4>
-                    <p>Se ha guardado con éxito la encuesta</p>
+                    <p>Se ha guardado con éxito sus preguntas</p>
                     <hr>
                     <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
                 </div>
@@ -72,8 +72,7 @@ export default {
                 .then((response)=>{
                     if(response.data.validate)
                     {
-                        
-
+                        me.disabled=true;
                     }
                 })
                 .catch((response)=>{
