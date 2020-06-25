@@ -28,7 +28,7 @@
                         </div>
                         <div class="col-md-12">
                             <label for="telefono">Número de teléfono</label>
-                            <input type="phone" v-model="form.telefono" id="telefono" name="telefono" class="form form-control" required>
+                            <input type="number" v-model="form.telefono" id="telefono" name="telefono" class="form form-control" required>
                         </div>
                         <div class="col-md-12">
                             <label for="pregunta">Registre su pregunta, inquietud u observación</label>
@@ -36,7 +36,7 @@
                         </div>
                         <div class="col-md-12">
                             <br>
-                            <button class="btn btn-success" :disabled="disabled">Guardar</button>
+                            <button class="btn btn-success" :disabled="disabled">Enviar</button>
                         </div>
                     </div>
                 </div>
