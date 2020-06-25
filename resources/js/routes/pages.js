@@ -12,6 +12,7 @@ import noAutorizate from '../components/pages/noAutorizate'
 import PageNotFound from '../components/pages/error404'
 /*STANDARD*/
 import encuesta from '../components/response/index'
+import preguntas from '../components/preguntas/form'
 
 
 
@@ -30,9 +31,22 @@ const router = new VueRouter({
             {
                 auth: false,
                 title:'Nueva encuesta',
-                roles:['admin','supervisor','observador']}
-            },
-
+                roles:['admin','supervisor','observador']
+            }
+        },
+        { 
+            path: prefix2 + '/preguntas/:name',
+            name: 'preguntas',
+            component: preguntas,
+            meta: 
+            {
+                auth: false,
+                title:'preguntas',
+                roles:['admin','supervisor','observador']
+            }
+        },
+        
+            
         
         /*STANDARD*/
         {path: prefix + '/start',name: 'start',component: start},

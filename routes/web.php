@@ -5,7 +5,8 @@ Route::get('logout',                'SinglePageController@cerrarSession');
 Route::get('dashboard',             'SinglePageController@home');
 Route::get('encuesta/{any}',        'SinglePageController@index')->where('any', '.*');
 Route::get('encuestas/show/{name}', 'TblEncuestasController@search');
-Route::post('encuestas/save',        'TblEncuestasController@save');
+Route::post('encuestas/save',       'TblEncuestasController@save');
+Route::post('preguntassave',        'TblEncuestasController@preguntasSave');
 
 Route::group(['middleware' => ['auth','role:admin']],function()
 {
@@ -31,8 +32,8 @@ Route::group(['middleware' => ['auth','validateActive']],function()
         Route::post('permistions/save','AuthController@permistionsSave');
         Route::post('changepass',      'AuthController@changepass');
     });
-
-
+    
+    
     Route::resource('encuestas', 'TblEncuestasController');
 
 

@@ -249,7 +249,7 @@ export default
 	},
 	mounted()
 	{
-		if(this.$route.name=='responseencuesta')
+		if(this.$route.name=='responseencuesta'|| this.$route.name=='preguntas' )
 		{
 			this.dashboard=false;
 		}

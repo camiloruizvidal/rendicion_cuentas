@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\TblEncuesta;
 use App\Models\TblEncuestasResultado;
 use App\Models\TblEncuestasResultadosRespuesta;
+use App\Models\TblPregunta;
 
 
 class TblEncuestasController extends Controller
@@ -73,6 +74,17 @@ class TblEncuestasController extends Controller
     public function show($id)
     {
         //
+    }
+    public function preguntasSave(Request $request)
+    {
+        $preguntas = new TblPregunta();
+        $preguntas->dirección = $request->dirección;
+        $preguntas->email = $request->email;
+        $preguntas->nombre = $request->nombre;
+        $preguntas->pregunta = $request->pregunta;
+        $preguntas->telefono = $request->telefono;
+        $preguntas->save();
+        return  $this->sendResponse('success');
     }
 
     /**
