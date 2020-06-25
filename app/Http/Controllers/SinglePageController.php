@@ -31,4 +31,12 @@ class SinglePageController extends Controller
     {
         return view('layouts.app');
     }
+    public function punto()
+    {
+        return [
+            'validate'=>true,
+            'data'=>
+            array(['id'=>1,'nombre'=>'Casa rosada'])
+        ];
+    }
 }

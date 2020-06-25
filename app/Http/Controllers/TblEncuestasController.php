@@ -75,6 +75,11 @@ class TblEncuestasController extends Controller
     {
         //
     }
+    public function indexPreguntas()
+    {
+        $preguntas = TblPregunta::all();
+        return  $this->sendResponse($preguntas);
+    }
     public function preguntasSave(Request $request)
     {
         $preguntas = new TblPregunta();

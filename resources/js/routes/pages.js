@@ -13,7 +13,7 @@ import PageNotFound from '../components/pages/error404'
 /*STANDARD*/
 import encuesta from '../components/response/index'
 import preguntas from '../components/preguntas/form'
-
+import respuestas from '../components/preguntas/index'
 
 
 //#endregion
@@ -45,6 +45,18 @@ const router = new VueRouter({
                 roles:['admin','supervisor','observador']
             }
         },
+        { 
+            path: prefix + '/respuestas',
+            name: 'respuestas',
+            component: respuestas,
+            meta: 
+            {
+                auth: false,
+                title:'Respuestas',
+                roles:['admin','supervisor','observador']
+            }
+        },
+        
         
             
         

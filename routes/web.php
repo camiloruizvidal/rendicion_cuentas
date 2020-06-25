@@ -7,7 +7,9 @@ Route::get('encuesta/{any}',        'SinglePageController@index')->where('any', 
 Route::get('encuestas/show/{name}', 'TblEncuestasController@search');
 Route::post('encuestas/save',       'TblEncuestasController@save');
 Route::post('preguntassave',        'TblEncuestasController@preguntasSave');
+Route::get('preguntas',            'TblEncuestasController@indexPreguntas');
 
+Route::get('puntoatencion', 'SinglePageController@punto');
 Route::group(['middleware' => ['auth','role:admin']],function()
 {
     Route::get('limpiar','SinglePageController@limpiar');
