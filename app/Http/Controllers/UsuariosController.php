@@ -7,7 +7,6 @@ use App\User;
 use App\Role;
 use Illuminate\Http\Request;
 use App\Models\RecursoHumano;
-use App\Models\TblPuntosAtencion;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redis;
@@ -22,13 +21,12 @@ class UsuariosController extends Controller
     }
     public function usuarioActual()
     {
-        $data = User::where('id','=',Auth::user()->id)->with('roles')->get()->first();
-        $data->tbl_punto_atencion=TblPuntosAtencion::find(Session::get('id_punto_atencion'));
+        $data = User::where('id','=',Auth::user()->id)->get()->first();
         return $data;
     }
     public function index()
     {
-        $data = User::where('id','!=',Auth::user()->id)->with('roles')->get();
+        $data = User::where('id','!=',Auth::user()->id)->get();
         return $this->sendResponse($data);
     }
     public function viewEdit($id)
@@ -179,7 +177,7 @@ class UsuariosController extends Controller
     {
         try 
         {
-            $data = User::where('id','=',$id)->with('roles')->get()->first();
+            $data = User::where('id','=',$id)->get()->first();
             return response()->json(
                 ['validate'=>true,'data'=>$data,'msj'=>null]
                 , 200);
@@ -195,8 +193,8 @@ class UsuariosController extends Controller
     {
         try 
         {
-            $data=User::with('TblPuntosAtencion')
-            ->orderBy('id_punto_atencion')
+            $data=User::
+            orderBy('id_punto_atencion')
             ->orderBy('apellido_primero')
             ->orderBy('apellido_segundo')
             ->orderBy('nombre_primero')

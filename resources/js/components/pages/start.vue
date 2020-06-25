@@ -20,7 +20,7 @@
           localStorage.setItem('permisos',JSON.stringify(response.data));
           localStorage.setItem('user',JSON.stringify(response.data));
           localStorage.setItem('name',JSON.stringify( ((response.data.nombre_primero==null)?'':response.data.nombre_primero)+' '+((response.data.apellido_primero==null)?'':response.data.apellido_primero)));
-          window.location=base+'/dashboard/encuesta/index';
+          window.location=base+'/dashboard/respuesta';
         })
         .catch(function(response){
           console.warn(response);
