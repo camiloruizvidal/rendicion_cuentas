@@ -8,11 +8,11 @@
                 </div>
         </template>
         <template v-else>
-            <form @submit.prevent="save()">
+            <form @submit.prevent="save()" class="form-encuesta">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
-                            <h3>Preguntas audiencia pública, rendición de cuentas 2019. EMPRESA SOCIAL DEL ESTADO E.S.E. POPAYÁN</h3>
+                            <h1 class="title">Preguntas audiencia pública, rendición de cuentas 2019. EMPRESA SOCIAL DEL ESTADO E.S.E. POPAYÁN</h1>
                         </div>
                         <div class="col-md-12">
                             <label for="nombre">Nombre</label>
