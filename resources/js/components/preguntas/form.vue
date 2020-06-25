@@ -5,7 +5,6 @@
                     <h4 class="alert-heading">Guardado</h4>
                     <p>Se ha guardado con éxito sus preguntas</p>
                     <hr>
-                    <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
                 </div>
         </template>
         <template v-else>
